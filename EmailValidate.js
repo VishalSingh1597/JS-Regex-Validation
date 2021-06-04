@@ -1,12 +1,12 @@
 //using prompt-sync module function to take input
 const readline = require("prompt-sync");
 const prompt=readline();
-//taking user input of email id which we need to validate
-let email = prompt("Enter Email : ");
-//regex to validate email before @ and ensure @ symbol
-const emailRegex = RegExp('^[A-Z a-z 0-9 !#$%&*.]{1,}[@]{1}[A-Z a-z 0-9 !#$%&*.]*$');
-//with test method checking email valid or not
-if(emailRegex.test(email))
-	console.log("Valid Pincode!");
+//taking user input
+let pin = prompt("Enter PIN : ");
+//regular expresion for 6 digit code and start and end restricts alphabet and space after three digits
+let pinRegExp = RegExp('^[1-9]{1}[0-9]{2}\\s{0,1}[0-9]{3}$');
+//with test method checking if pin is valid or not and print
+if(pinRegExp.test(pin))
+	console.log("Valid Pincode");
 else
-	console.log("Invalid Pincode!");
+	console.log("Invalid Pincode");
